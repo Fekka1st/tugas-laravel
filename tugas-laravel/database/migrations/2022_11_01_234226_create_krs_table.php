@@ -22,7 +22,7 @@ class CreateKrsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliahs')
+            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliah')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
