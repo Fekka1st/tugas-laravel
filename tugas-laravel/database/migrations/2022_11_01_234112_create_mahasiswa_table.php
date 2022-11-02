@@ -13,13 +13,13 @@ class CreateMahasiswaTable extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
+        Schema::create('mahasiswas', function (Blueprint $table) {
             $table->char('npm', 10);
             $table->char('nidn', 10);
             $table->string('nama', 50);
 
             $table->primary('npm');
-            $table->foreign('nidn')->references('nidn')->on('dosen')
+            $table->foreign('nidn')->references('nidn')->on('dosens')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -32,6 +32,6 @@ class CreateMahasiswaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswa');
+        Schema::dropIfExists('mahasiswas');
     }
 }

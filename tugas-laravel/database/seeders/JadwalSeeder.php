@@ -23,12 +23,12 @@ class JadwalSeeder extends Seeder
             $dosen = Dosen::inRandomOrder()->first();
             $matakuliah = Matakuliah::inRandomOrder()->first();
 
-            DB::table('jadwal')->insert(
+            DB::table('jadwals')->insert(
                 [
                     'id' => $faker->unique()->randomNumber(),
                     'kode_matakuliah' => $matakuliah->kode_matakuliah,
                     'nidn' => $dosen->nidn,
-                    'kelas' => $faker->randomElement(['A', 'B', 'C', 'NR']),
+                    'kelas' => $faker->randomElement(['A', 'B', 'C', 'D']),
                     'hari' => $faker->randomElement(['Senin', 'Selasa', 'Rabu', 'Kamis', "Jum'at", 'Sabtu']),
                     'jam' => $faker->time()
                 ]

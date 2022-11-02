@@ -13,7 +13,7 @@ class CreateJadwalTable extends Migration
      */
     public function up()
     {
-        Schema::create('jadwal', function (Blueprint $table) {
+        Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
             $table->char('kode_matakuliah', 8);
             $table->char('nidn', 10);
@@ -21,11 +21,11 @@ class CreateJadwalTable extends Migration
             $table->string('hari', 10);
             $table->time('jam');
 
-            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliah')
+            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliahs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('nidn')->references('nidn')->on('dosen')
+            $table->foreign('nidn')->references('nidn')->on('dosens')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -38,6 +38,6 @@ class CreateJadwalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jadwal');
+        Schema::dropIfExists('jadwals');
     }
 }

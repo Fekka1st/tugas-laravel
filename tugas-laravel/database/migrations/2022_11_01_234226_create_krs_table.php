@@ -18,11 +18,11 @@ class CreateKrsTable extends Migration
             $table->char('npm', 10);
             $table->char('kode_matakuliah', 8);
 
-            $table->foreign('npm')->references('npm')->on('mahasiswa')
+            $table->foreign('npm')->references('npm')->on('mahasiswas')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliah')
+            $table->foreign('kode_matakuliah')->references('kode_matakuliah')->on('matakuliahs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

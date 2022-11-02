@@ -13,7 +13,7 @@ class CreateMatakuliahTable extends Migration
      */
     public function up()
     {
-        Schema::create('matakuliah', function (Blueprint $table) {
+        Schema::create('matakuliahs', function (Blueprint $table) {
             $table->char('kode_matakuliah', 8);
             $table->string('nama_matakuliah', 50);
             $table->integer('sks');
@@ -29,6 +29,6 @@ class CreateMatakuliahTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matakuliah');
+        Schema::dropIfExists('matakuliahs');
     }
 }

@@ -13,7 +13,7 @@ class CreateDosenTable extends Migration
      */
     public function up()
     {
-        Schema::create('dosen', function (Blueprint $table) {
+        Schema::create('dosens', function (Blueprint $table) {
             $table->char('nidn', 10);
             $table->string('nama', 50);
 
@@ -28,6 +28,6 @@ class CreateDosenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dosen');
+        Schema::dropIfExists('dosens');
     }
 }

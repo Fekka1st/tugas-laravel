@@ -24,7 +24,7 @@ class MatakuliahSeeder extends Seeder
         ];
 
         for ($i = 0; $i < 10; $i++) {
-            DB::table('matakuliah')->insert(
+            DB::table('matakuliahs')->insert(
                 [
                     'kode_matakuliah' => 'IF-' . rand(00000, 99999),
                     'nama_matakuliah' => array_rand($matakuliah, 3)[0],

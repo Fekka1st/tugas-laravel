@@ -19,7 +19,7 @@ class MahasiswaSeeder extends Seeder
         $faker = Faker::create('id_ID');
         for ($i = 0; $i < 10; $i++) {
             $dosen = Dosen::inRandomOrder()->first();
-            DB::table('mahasiswa')->insert(
+            DB::table('mahasiswas')->insert(
                 [
                     'npm' => rand(5520120000, 5520120999),
                     'nidn' => $dosen->nidn,
